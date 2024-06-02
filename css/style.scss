@@ -1,14 +1,32 @@
+/* Variáveis */
 $primary: #222;
 $secondary: #CCC;
+$third: #0023bd;
 $clear: #F00;
 $margim: 0px;
-
+$font: "Quicksand", "Arial"; 
+$reset: none;
+/* formatação do código*/
 * {
+    font-family: $font;
     margin: $margim;
     padding: $margim;
+    font-size: 16px;
+}
+.logo:hover {
+    transition: all 5s;
+    background: linear-gradient( to right, $primary, $third);
 }
  .header {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: inline-block;
     background-color: $primary;
+    .bot {
+        display: flex;
+        justify-content: flex-end;
+    }
     .headerNav {
         margin-top: 30px;
         float: right;
@@ -18,11 +36,90 @@ $margim: 0px;
                 margin-right: 30px;
                 display: inline-block;
                 a {
-                    font-size: 25px;
+                    font-size: 30px;
                     text-decoration: none;
                     color: $secondary;
+                    transition: all 0.3s;
                 }
             }
         }
     }
  }
+ /* Mudar a cor de transição do link*/
+ .header {
+    .headerNav {
+        ul {
+            li {
+                a:hover {
+                    color: $third;
+                }
+            }
+        }
+    }
+ } 
+ /* Formatação da página principal */
+ .container {
+    width: 100%;
+    .banner {
+        text-align: center;
+        padding-bottom: 20px;
+        margin-top: 0;
+        background: $secondary;
+          
+ }
+}
+//formatando a div box, coms as imagens dos jogos
+.box {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+    display: flex;
+
+    
+    .flex {
+        text-align: center;
+        .coluna {
+            background: $secondary;
+            .imagem{
+                transition: all 1s;
+            }
+            p {
+                a {
+                    text-decoration: none;
+                    transition: all 0.3s;
+                    color: #000000;
+                    font-weight: bold;
+                }
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+//adicionando animação 
+.box {
+    .flex {
+        .coluna {
+            img:hover {
+                transition: all 5s;
+                 background: linear-gradient( to right, $primary, $third);
+            }           
+            p {
+                a:hover {
+                    color: $third;
+                }
+            }
+        }
+    }
+}
+//estilizando o footer
+footer{
+    text-align: center;
+    background-color: #000000;
+    margin-top: 20px;
+    padding: 20px;
+    color: white;
+}
+
